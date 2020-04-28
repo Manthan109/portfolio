@@ -27,6 +27,19 @@ class _HomeState extends State<Home> {
     }
   }
 
+  Size screenSize(BuildContext context) {
+    return MediaQuery.of(context).size;
+  }
+
+  double screenHeight(BuildContext context, {double dividedBy = 1}) {
+    return screenSize(context).height / dividedBy;
+  }
+
+  double screenWidth(BuildContext context, {double dividedBy = 1}) {
+    return screenSize(context).width / dividedBy;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final Email email = Email(
@@ -40,6 +53,10 @@ class _HomeState extends State<Home> {
     const String linkedin = "https://www.linkedin.com/in/manthangupta109/";
     const String medium = "https://medium.com/@manthangupta109";
     const String github = "https://github.com/Manthan109";
+
+    var screenSize = MediaQuery.of(context).size;
+    var width = screenSize.width;
+    var height = screenSize.height;
 
     return Scaffold(
       appBar: AppBar(
@@ -148,7 +165,7 @@ class _HomeState extends State<Home> {
               Padding(
                 padding: const EdgeInsets.only(left: 200.0, top: 100.0),
                 child: Container(
-                  height: 550.0,
+                  height:550.0,
                   width: 800.0,
                   child: Card(
                     color: const Color(0xFF041E40),
@@ -223,8 +240,8 @@ class _HomeState extends State<Home> {
                                     child: GFButton(
                                       position: GFPosition.start,
                                       type: GFButtonType.outline,
-                                      onPressed: ()=>setState(() async{
-                                       await FlutterEmailSender.send(email);
+                                      onPressed: () => setState(() async {
+                                        await FlutterEmailSender.send(email);
                                       }),
                                       text: "Hire Me",
                                       textColor: const Color(0xFF39CEC0),
@@ -244,8 +261,8 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Container(
-                height: 400.0,
-                width: 400.0,
+                height: 500.0,
+                width: 450.0,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Image.asset("assets/dev.png"),
