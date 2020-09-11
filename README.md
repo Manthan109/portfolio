@@ -3,6 +3,8 @@
 This is an attempt in building my portfolio website. You can access the website at https://manthangupta.netlify.app/#/ 
 Through building this portfolio I tried my hands on Flutter Web for the first time.
 
+The website is not screen friendly right now so it works only on laptop.
+
 ![Capture](https://user-images.githubusercontent.com/42516515/92855315-c4b36780-f40f-11ea-8f9f-01a745d79712.PNG)
 
 ## Getting Started
